@@ -1,0 +1,17 @@
+.logo {
+    text-align: center;
+    padding: 40px;
+}
+
+.logo img {
+    width: 360px;
+}
+
+.row {
+    width: 100%;
+}
+
+.login {
+    border-left: 2px solid #72A521;
+    padding: 40px;
+}
