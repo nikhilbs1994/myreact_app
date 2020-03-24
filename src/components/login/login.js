@@ -1,6 +1,8 @@
 import React from 'react';
-import {Form, Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { authUser } from '../../services/userApi';
+import { Redirect } from "react-router-dom";
+import { connect } from 'react-redux';
 
 
 class Login extends React.Component {
@@ -21,13 +23,15 @@ class Login extends React.Component {
             userName: this.state.userName.current.value,
             password: this.state.password.current.value
         }
-
-        authUser(logginDetails);
-        
-        console.log(this.state.userName.current.value);
+        this.props.authUser(logginDetails);        
     }
 
     render() {
+        console.log(this.props);
+        if (this.props.isLoggedIn) {
+            return <Redirect to='/about'/>;
+        }
+
         return (
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
@@ -46,4 +50,20 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+
+function mapStateToProps(state) {
+    return ({
+        isLoggedIn: state.user.isLoggedIn
+    });
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+      authUser: (logginDetails) => {
+        dispatch(authUser(dispatch, logginDetails))
+      }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
+

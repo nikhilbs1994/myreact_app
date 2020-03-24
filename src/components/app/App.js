@@ -3,8 +3,8 @@ import React, { Suspense, lazy } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const Home = lazy(() => import('./sections/home/home'));
-const About = lazy(() => import('./sections/data'));
+const Home = lazy(() => import('../../sections/home/home'));
+const About = lazy(() => import('../../sections/dashboard/dashboard.js'));
 
 class App extends React.Component {
   render() {
