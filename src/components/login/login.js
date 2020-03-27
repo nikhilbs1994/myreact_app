@@ -29,7 +29,7 @@ class Login extends React.Component {
     render() {
         console.log(this.props);
         if (this.props.isLoggedIn) {
-            return <Redirect to='/about'/>;
+            return <Redirect to='/dashboard'/>;
         }
 
         return (

@@ -1,9 +1,10 @@
 import React from 'react';
+import Building from '../../components/building/building';
 
 class Dashboard extends React.Component {
-  render() {
-    return <h1>{process.env.REACT_APP_API_BASE_URL}</h1>;
-  }
+	render() {
+		return <Building />;
+	}
 }
 
 export default Dashboard;

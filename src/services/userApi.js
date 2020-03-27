@@ -9,6 +9,7 @@ export function authUser(dispatch, loginDetails) {
         response.then( (res) => {
             if(res.data && res.data.status === "ok") {
                 dispatch(login());
+                sessionStorage.setItem("isLoggedIn", true);
             }
         });
     }; 

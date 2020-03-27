@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app/App';
+import App from './components/app/app.js';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import allReducer from './container/reducer';
 import thunk from 'redux-thunk';
+import { login } from './container/action/userAction';
 
 const store = createStore(
     allReducer,
@@ -15,9 +16,13 @@ const store = createStore(
     )
 );
 
+if(sessionStorage.getItem("isLoggedIn")) {
+    store.dispatch(login());
+}
+
 ReactDOM.render(
     <Provider store={store}>
-    <App />
+        <App />
     </Provider>
     , document.getElementById('root')
 );
