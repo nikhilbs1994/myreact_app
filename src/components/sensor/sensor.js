@@ -12,7 +12,8 @@ class Sensor extends React.Component {
 
 	selectSensor (event) {
 		event.preventDefault();
-		this.props.updateSelectedDevice(this.props.sensorId);
+		if(this.props.selectedDevice !== this.props.sensorId)
+			this.props.updateSelectedDevice(this.props.sensorId);
 	}
 	
 	render() {

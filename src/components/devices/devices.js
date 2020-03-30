@@ -20,8 +20,7 @@ class Device extends React.Component {
 
 	async componentDidMount() {
 		let count = await this.props.getDeviceCount();
-		this.updateDeviceData(count);
-		this.props.updateSelectedDevice();	
+		this.updateDeviceData(count);	
 	}
 
 	updateDeviceData(count) {

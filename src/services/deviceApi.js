@@ -2,10 +2,10 @@ import { updateDeviceCount, updateDeviceDetails } from '../container/action/devi
 
 const axios = require('axios');
 const API = process.env.REACT_APP_API_BASE_URL;
-var urlParam = new URLSearchParams({
+const urlParam = {
     userId: 'classic',
     authPassword: 'classic'
-});
+};
 
 export function getDeviceCount(dispatch) {
     const response = axios.get(API + "device/count?" + new URLSearchParams(urlParam));
