@@ -1,5 +1,30 @@
 This project is React based front end app for AQMS.
 
+## Requirement ##
+
+NodeJS >= v12.16.1
+
+## How to run ##
+
+1. Clone the repo and enter project repo.
+2. Instal NVM
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+```
+3. Install node version 
+```sh
+nvm install v12.16.1
+```
+4. Install node modules 
+```sh
+npm install
+```
+5. Update server IP if needed in config/.env.dev 
+6. Run npm command to start the app in development mode
+```sh
+npm start:dev
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
